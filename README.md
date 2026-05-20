@@ -10,5 +10,5 @@ Input these codes on the start screen
     Makes you into hornet
     
   UUDDLRLRABSELECTSTART
-    Give you 10000 health and mana
+    Gives you 10000 health and mana
 </details>
