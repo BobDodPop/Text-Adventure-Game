@@ -4,13 +4,18 @@ import random
 
 
 def give_options():
-    choice = input("What will you do? ")
+    choice = input("What will you do? ").lower()
     if choice == "inventory" or choice == "i" or choice == "inv":
         inventory.sort()
         print(inventory)
-    if choice == "spells" or choice == "spelllist" or choice == "spell list" or choice == "sl":
+    if choice == "inspect_inv" or choice == "ii" or choice == "inspect_inventory":
+        inv_choice = input("What item would you like to inspect? ")
+    if choice == "spells" or choice == "spelllist" or choice == "spell list":
         spell_list.sort
         print(spell_list)
+    if choice == "skills" or choice == "skilllist" or choice == "skill list"
+        skill_list.sort
+        print(skill_list)
 
 
 
@@ -20,23 +25,24 @@ def give_options():
 
 max_health = 100
 health = 100
-max_mana = 100
+max_mana = 10
+mana = 10
 inventory = []
 spell_list = []
+skill_list = []
 level = 1
 blood_alcohol_content = 0.00
 current_class = ""
 current_race = ""
 game_stage = "Start Screen"
 character_name = ""
-acceptable_classes = ["warrior", "mage", "archer", "alchemist", "ritualist"]
+acceptable_classes = ["warrior", "mage", "archer", "alchemist", "ritualist", "artificer"]
 acceptable_races = ["human", "elf", "orc", "goblin", "skyfoul", "clockwork golem"]
 
 
 
 
 #Area Stats
-
 
 current_location = "The Argon Axolotl"
 current_room = "Main Dinning Hall"
@@ -72,7 +78,6 @@ class spells:
 
 # Skills
 
-
 class skills:
     def __init__(self, skill, level, acquired, activated, experience):
         self.skill = skill
@@ -92,6 +97,7 @@ hand_combat_skill = skills("Hand-to-hand Combat Training", 0, False, False, 0)
 alchemy_skill = skills("Alchemy", 0, False, False, 0)
 chemistry_skill = skills("Chemistry", 0, False, False, 0)
 ritual_skill = skills("Ritualism", 0, False, False, 0)
+smithing_skill = skills("Smithing", 0, False, False, 0)
 
 
 
@@ -111,7 +117,12 @@ while game_stage == "Start Screen":
         current_race = "spider-wyrm"
         current_class = "weaver"
         silk_affinity = 10
-
+        game_stage = ""
+    elif start_choice == "UUDDLRLRABSELECTSTART"
+        max_health = 10000
+        health = 10000
+        max_mana = 10000
+        mana = 10000
 
 
 
@@ -126,9 +137,6 @@ while game_stage == "Character Creation":
         current_class = input("Please select a class or type list for acceptable classes ").lower()
         if current_class == "list":
             print(acceptable_classes)
-
-
-
 
 
 
