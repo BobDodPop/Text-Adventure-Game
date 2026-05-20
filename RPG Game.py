@@ -13,7 +13,7 @@ def give_options():
     if choice == "spells" or choice == "spelllist" or choice == "spell list":
         spell_list.sort
         print(spell_list)
-    if choice == "skills" or choice == "skilllist" or choice == "skill list"
+    if choice == "skills" or choice == "skilllist" or choice == "skill list":
         skill_list.sort
         print(skill_list)
 
@@ -98,13 +98,8 @@ alchemy_skill = skills("Alchemy", 0, False, False, 0)
 chemistry_skill = skills("Chemistry", 0, False, False, 0)
 ritual_skill = skills("Ritualism", 0, False, False, 0)
 smithing_skill = skills("Smithing", 0, False, False, 0)
-
-
-
-
-
-
-
+poison_resistance_skill = skills("Poison Resistance", 0, False, False, 0)
+alchohol_tolerance_skill = skills("Achohol Tolerance", 0, False, False, 0)
 
 
 
@@ -112,13 +107,13 @@ while game_stage == "Start Screen":
     start_choice = input('Type "Start" to start the game! ')
     if start_choice == "Start" or start_choice == "start":
         game_stage = "Character Creation"
-    elif start_choice == "SHAW!":
+    elif start_choice == "SHAW!" or start_choice == "ADINO!" or start_choice == "HEGALE!" or start_choice == "GARAMA!" or start_choice == "GITGUD!":
         character_name = "Hornet"
         current_race = "spider-wyrm"
         current_class = "weaver"
         silk_affinity = 10
         game_stage = ""
-    elif start_choice == "UUDDLRLRABSELECTSTART"
+    elif start_choice == "UUDDLRLRABSELECTSTART" or start_choice == "UpUpDownDownLeftRightLeftRightABSelectStart":
         max_health = 10000
         health = 10000
         max_mana = 10000
