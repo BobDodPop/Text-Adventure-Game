@@ -111,11 +111,11 @@ while game_stage == "Character Creation":
         current_class = input("Please select a class or type list for acceptable classes ").lower()
         if current_class == "list":
             print(acceptable_classes)
-    if current_race in acceptable_races and current_class in acceptable_classes:
+    while current_race in acceptable_races and current_class in acceptable_classes:
         game_stage = "Gameplay Loop"
 
 while game_stage == "Gameplay Loop":
 
-    while current_room == "Main Dinning Room" and current_location == "The Argon Axolotl":
+    while current_room == "Main Dinning Hall" and current_location == "The Argon Axolotl":
         print("You wake up in a tavern")
         give_options()
