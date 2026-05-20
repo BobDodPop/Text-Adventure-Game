@@ -1,8 +1,5 @@
 import random
 
-
-
-
 def give_options():
     choice = input("What will you do? ").lower()
     if choice == "inventory" or choice == "i" or choice == "inv":
@@ -17,11 +14,7 @@ def give_options():
         skill_list.sort
         print(skill_list)
 
-
-
-
 #Player Stats
-
 
 max_health = 100
 health = 100
@@ -39,9 +32,6 @@ character_name = ""
 acceptable_classes = ["warrior", "mage", "archer", "alchemist", "ritualist", "artificer"]
 acceptable_races = ["human", "elf", "orc", "goblin", "skyfoul", "clockwork golem"]
 
-
-
-
 #Area Stats
 
 current_location = "The Argon Axolotl"
@@ -52,9 +42,7 @@ day = 22
 hour = 11
 minute = 36
 
-
 #Magic Stats
-
 
 fire_affinity = 0
 water_affinity = 0
@@ -64,18 +52,12 @@ earth_affinity = 0
 arcane_affinity = 0
 silk_affinity = 0
 
-
 class spells:
     def __init__(self, spell, level, acquired):
         self.spell = spell
         self.level = level
         self.acquired = acquired
-
-
-
-
-
-
+        
 # Skills
 
 class skills:
@@ -85,7 +67,6 @@ class skills:
         self.acquired = acquired
         self.activated = activated
         self.experience = experience
-
 
 farming_skill = skills("Farming", 0, False, False, 0)
 mining_skill = skills("Mining", 0, False, False, 0)
@@ -101,7 +82,7 @@ smithing_skill = skills("Smithing", 0, False, False, 0)
 poison_resistance_skill = skills("Poison Resistance", 0, False, False, 0)
 alchohol_tolerance_skill = skills("Achohol Tolerance", 0, False, False, 0)
 
-
+# Actual Gameplay
 
 while game_stage == "Start Screen":
     start_choice = input('Type "Start" to start the game! ')
@@ -112,14 +93,12 @@ while game_stage == "Start Screen":
         current_race = "spider-wyrm"
         current_class = "weaver"
         silk_affinity = 10
-        game_stage = ""
+        game_stage = "Gameplay Loop"
     elif start_choice == "UUDDLRLRABSELECTSTART" or start_choice == "UpUpDownDownLeftRightLeftRightABSelectStart":
         max_health = 10000
         health = 10000
         max_mana = 10000
         mana = 10000
-
-
 
 while game_stage == "Character Creation":
     while character_name == "":
@@ -133,6 +112,8 @@ while game_stage == "Character Creation":
         if current_class == "list":
             print(acceptable_classes)
 
+while game_stage == "Gameplay Loop":
 
-
-
+    while current_room == "Main Dinning Room" and current_area == "The Argon Axolotl":
+        print("You wake up in a tavern")
+        give_options()
