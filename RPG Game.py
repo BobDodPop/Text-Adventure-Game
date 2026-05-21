@@ -34,6 +34,7 @@ game_stage = "Start Screen"
 character_name = ""
 acceptable_classes = ["warrior", "mage", "archer", "alchemist", "ritualist", "artificer"]
 acceptable_races = ["human", "elf", "orc", "goblin", "skyfoul", "clockwork golem"]
+choice = ""
 
 #Area Stats
 
