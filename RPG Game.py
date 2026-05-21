@@ -1,19 +1,22 @@
 import flask
 import random
 
+choice = ""
+
 def give_options():
-    choice = input("What will you do? ").lower()
     if choice == "inventory" or choice == "i" or choice == "inv":
         inventory.sort()
         print(inventory)
-    if choice == "inspect_inv" or choice == "ii" or choice == "inspect_inventory":
-        inv_choice = input("What item would you like to inspect? ")
+    if choice == "inspect inv" or choice == "ii" or choice == "inspect inventory":
+        inventory_inspect_choice = input("What item would you like to inspect? ")
     if choice == "spells" or choice == "spelllist" or choice == "spell list":
         spell_list.sort
         print(spell_list)
     if choice == "skills" or choice == "skilllist" or choice == "skill list":
         skill_list.sort
         print(skill_list)
+    if choice == "options":
+        print("inventory, inspect inventory, spells, skills")
 
 #Player Stats
 
@@ -26,12 +29,14 @@ spell_list = []
 skill_list = []
 level = 1
 blood_alcohol_content = 0.00
+coins = 100
 current_class = ""
 current_race = ""
 game_stage = "Start Screen"
 character_name = ""
 acceptable_classes = ["warrior", "mage", "archer", "alchemist", "ritualist", "artificer"]
 acceptable_races = ["human", "elf", "orc", "goblin", "skyfoul", "clockwork golem"]
+choice = ""
 
 #Area Stats
 
@@ -112,11 +117,58 @@ while game_stage == "Character Creation":
         current_class = input("Please select a class or type list for acceptable classes ").lower()
         if current_class == "list":
             print(acceptable_classes)
-    while current_race in acceptable_races and current_class in acceptable_classes:
+    if current_race in acceptable_races and current_class in acceptable_classes:
         game_stage = "Gameplay Loop"
 
 while game_stage == "Gameplay Loop":
 
-    while current_room == "Main Dinning Hall" and current_location == "The Argon Axolotl":
-        print("You wake up in a tavern")
-        give_options()
+    while current_location == "The Argon Axolotl":
+        while current_room == "Main Dinning Hall":
+            print("You are in the main dinning hall of the Argon Axolotl tavern")
+            choice = input("What will you do? ").lower()
+            give_options()
+            if choice == "talk" or choice == "t":
+                print("Hey there, I'm Bob the Bartender")
+                print("I sell drinks and stuff")
+                choice == input("Would you like to buy a drink? Only four coins. ").lower()
+                if choice == "yes" or choice == "y" and coins >= 4:
+                    print("Great, that'll be four coins")
+                    coins -= 4
+                    inventory.append("Flagon of beer")
+                elif choice == "yes" or choice == "y" and coins < 4:
+                    print("Nope you're too broke")
+                else:
+                    print("That's fine, it's not like I worked hard on it or anything")
+            if choice == "leave":
+                current_location = "Town of Greyshard"
+                current_room = "Town Square"
+
+    while current_location == "Town of Greyshard":
+        while current_room == "Town Square":
+            print("You are in the town square of the Town of Greyshard")
+            print("You can go to the following areas: Tavern, Blacksmith, General Store")
+            give_options()
+            if choice == "Tavern":
+                current_location = "The Argon Axolotl"
+                current_room = "Main Dinning Hall"
+            if choice == "Blacksmith":
+                current_location = "The Greyshard Smithy"
+                current_room = "Shop Front"
+            if choice == "General Store":
+                current_location = "The Greyshard General Store"
+                current_room = "Shop Front"
+
+    while current_location == "The Greyshard Smithy":
+        while current_room == "Shop Front":
+            print("Hello, I am a blacksmith with many wares")
+            print("Here is what I have with their prices:")
+            print("Steel Axe (12)")
+            print("Iron Axe (11)")
+            print("Iron Sword (10)")
+            print("Steel Spear (12)")
+            print("Iron Spear (11)")
+            give_options()
+
+
+
+
