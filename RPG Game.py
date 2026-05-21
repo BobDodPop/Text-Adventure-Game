@@ -1,5 +1,7 @@
 import random
 
+choice = ""
+
 def give_options():
     choice = input("What will you do? ").lower()
     if choice == "inventory" or choice == "i" or choice == "inv":
