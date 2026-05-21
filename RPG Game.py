@@ -124,7 +124,7 @@ while game_stage == "Gameplay Loop":
         while current_room == "Main Dinning Hall":
             print("You are in the main dinning hall of the Argon Axolotl tavern")
             give_options()
-            if choice == "talk":
+            if choice == "talk" or choice == "t":
                 print("Hey there, I'm Bob the Bartender")
                 print("I sell drinks and stuff")
                 choice == input("Would you like to buy a drink? Only four coins. ").lower()
@@ -136,7 +136,7 @@ while game_stage == "Gameplay Loop":
                     print("Nope you're too broke")
                 else:
                     print("That's fine, it's not like I worked hard on it or anything")
-            if choice == "leave":
+            while choice == "leave":
                 current_location = "Town of Greyshard"
                 current_room = "Town Square"
 
