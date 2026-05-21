@@ -13,6 +13,8 @@ def give_options():
     if choice == "skills" or choice == "skilllist" or choice == "skill list":
         skill_list.sort
         print(skill_list)
+    if choice == "options"
+        print("inventory, spells, skills)
 
 #Player Stats
 
@@ -25,6 +27,7 @@ spell_list = []
 skill_list = []
 level = 1
 blood_alcohol_content = 0.00
+coins = 100
 current_class = ""
 current_race = ""
 game_stage = "Start Screen"
@@ -116,6 +119,37 @@ while game_stage == "Character Creation":
 
 while game_stage == "Gameplay Loop":
 
-    while current_room == "Main Dinning Room" and current_location == "The Argon Axolotl":
-        print("You wake up in a tavern")
-        give_options()
+    while current_location == "The Argon Axolotl":
+        while current_room == "Main Dinning Hall":
+            print("You are in the main dinning hall of the Argon Axolotl tavern")
+            give_options()
+            if choice == "talk":
+                print("Hey there, I'm Bob the Bartender")
+                print("I sell drinks and stuff")
+                choice == input("Would you like to buy a drink? Only four coins. ").lower()
+                if choice == "yes" or choice == "y" and coins >= 4:
+                    print("Great, that'll be four coins")
+                    coins -= 4
+                    inventory.append("Flagon of beer")
+                elif choice == "yes" or choice == "y" and coins < 4:
+                    print("Nope you're too broke")
+                else:
+                    print("That's fine, it's not like I worked hard on it or anything")
+            if choice == "leave"
+                current_location = "Town of Greyshard"
+                current_room = "Town Square"
+
+    while current_location == "Town of Greyshard":
+        while current_room == "Town Square":
+            print("You are in the town square of the Town of Greyshard")
+            print("You can go to the following areas: Tavern, Blacksmith, General Store")
+            give_options()
+            if choice == "Tavern"
+                current_location = "The Argon Axolotl"
+                current_room = "Main Dinning Hall"
+            if choice == "Blacksmith"
+                current_location = "The Greyshard Smithy"
+                current_room = "Shop Front"
+            if choice == "General Store"
+                current_location = "The Greyshard General Store"
+                current_room = "Shop Front"
