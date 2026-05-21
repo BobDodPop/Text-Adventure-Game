@@ -5,16 +5,16 @@ def give_options():
     if choice == "inventory" or choice == "i" or choice == "inv":
         inventory.sort()
         print(inventory)
-    if choice == "inspect_inv" or choice == "ii" or choice == "inspect_inventory":
-        inv_choice = input("What item would you like to inspect? ")
+    if choice == "inspect inv" or choice == "ii" or choice == "inspect inventory":
+        inventory_inspect_choice = input("What item would you like to inspect? ")
     if choice == "spells" or choice == "spelllist" or choice == "spell list":
         spell_list.sort
         print(spell_list)
     if choice == "skills" or choice == "skilllist" or choice == "skill list":
         skill_list.sort
         print(skill_list)
-    if choice == "options"
-        print("inventory, spells, skills)
+    if choice == "options":
+        print("inventory, inspect inventory, spells, skills")
 
 #Player Stats
 
