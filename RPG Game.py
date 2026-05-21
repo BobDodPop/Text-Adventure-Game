@@ -3,7 +3,6 @@ import random
 choice = ""
 
 def give_options():
-    choice = input("What will you do? ").lower()
     if choice == "inventory" or choice == "i" or choice == "inv":
         inventory.sort()
         print(inventory)
@@ -125,6 +124,7 @@ while game_stage == "Gameplay Loop":
     while current_location == "The Argon Axolotl":
         while current_room == "Main Dinning Hall":
             print("You are in the main dinning hall of the Argon Axolotl tavern")
+            choice = input("What will you do? ").lower()
             give_options()
             if choice == "talk" or choice == "t":
                 print("Hey there, I'm Bob the Bartender")
@@ -138,7 +138,7 @@ while game_stage == "Gameplay Loop":
                     print("Nope you're too broke")
                 else:
                     print("That's fine, it's not like I worked hard on it or anything")
-            while choice == "leave":
+            if choice == "leave":
                 current_location = "Town of Greyshard"
                 current_room = "Town Square"
 
