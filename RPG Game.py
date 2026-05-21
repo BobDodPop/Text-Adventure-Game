@@ -135,7 +135,7 @@ while game_stage == "Gameplay Loop":
                     print("Nope you're too broke")
                 else:
                     print("That's fine, it's not like I worked hard on it or anything")
-            if choice == "leave"
+            if choice == "leave":
                 current_location = "Town of Greyshard"
                 current_room = "Town Square"
 
@@ -144,12 +144,27 @@ while game_stage == "Gameplay Loop":
             print("You are in the town square of the Town of Greyshard")
             print("You can go to the following areas: Tavern, Blacksmith, General Store")
             give_options()
-            if choice == "Tavern"
+            if choice == "Tavern":
                 current_location = "The Argon Axolotl"
                 current_room = "Main Dinning Hall"
-            if choice == "Blacksmith"
+            if choice == "Blacksmith":
                 current_location = "The Greyshard Smithy"
                 current_room = "Shop Front"
-            if choice == "General Store"
+            if choice == "General Store":
                 current_location = "The Greyshard General Store"
                 current_room = "Shop Front"
+
+    while current_location == "The Greyshard Smithy":
+        while current_room == "Shop Front":
+            print("Hello, I am a blacksmith with many wares")
+            print("Here is what I have with their prices:")
+            print("Steel Axe (12)")
+            print("Iron Axe (11)")
+            print("Iron Sword (10)")
+            print("Steel Spear (12)")
+            print("Iron Spear (11)")
+            give_options()
+
+
+
+
