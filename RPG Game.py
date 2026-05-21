@@ -37,6 +37,7 @@ character_name = ""
 acceptable_classes = ["warrior", "mage", "archer", "alchemist", "ritualist", "artificer"]
 acceptable_races = ["human", "elf", "orc", "goblin", "skyfoul", "clockwork golem"]
 choice = ""
+alt_choice = ""
 
 #Area Stats
 
@@ -130,12 +131,12 @@ while game_stage == "Gameplay Loop":
             if choice == "talk" or choice == "t":
                 print("Hey there, I'm Bob the Bartender")
                 print("I sell drinks and stuff")
-                choice == input("Would you like to buy a drink? Only four coins. ").lower()
-                if choice == "yes" or choice == "y" and coins >= 4:
+                alt_choice == input("Would you like to buy a drink? Only four coins. ").lower()
+                if alt_choice == "yes" or alt_choice == "y" and coins >= 4:
                     print("Great, that'll be four coins")
                     coins -= 4
                     inventory.append("Flagon of beer")
-                elif choice == "yes" or choice == "y" and coins < 4:
+                elif alt_choice == "yes" or alt_choice == "y" and coins < 4:
                     print("Nope you're too broke")
                 else:
                     print("That's fine, it's not like I worked hard on it or anything")
